@@ -1,0 +1,22 @@
+.div{
+
+    margin-top: 40px;
+    padding : 18px;
+width: 100%;
+height: auto;
+flex-direction: row;
+display: flex;
+flex-wrap: wrap;
+
+order: 3;
+height: fit-content;
+
+}
+
+@media (max-width:800px){
+
+.div{
+    flex-direction: column;
+}
+
+}
