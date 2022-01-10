@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Badge, Box, IconButton, Typography } from "@mui/material";
+import { Badge, Box, IconButton } from "@mui/material";
 
 import MailIcon from '@mui/icons-material/Mail';
 
