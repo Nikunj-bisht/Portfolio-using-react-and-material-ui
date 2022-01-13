@@ -1,8 +1,9 @@
 import React , {useState} from "react";
-import {Box,IconButton, Menu, MenuItem, Toolbar, Typography ,Avatar, Container} from "@mui/material";
+import {Toolbar, Typography ,Avatar, Container ,IconButton} from "@mui/material";
 import { AppBar} from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbaricons from "./Toolbaricons";
+import ChatIcon from '@mui/icons-material/Chat';
+import { Link } from "react-router-dom";
 
 const Navigation = () =>{
 
@@ -22,8 +23,8 @@ const handleOpenNavMenu = (event) =>{
     return (
 
 <React.Fragment>
-<AppBar position="static">
-<Container maxWidth="xl">
+<AppBar>
+<Container>
 
 <Toolbar>
 <Typography
@@ -35,43 +36,12 @@ const handleOpenNavMenu = (event) =>{
           >
             Nikunj Bisht
           </Typography>
-<Box>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-                <MenuItem>
-                  <Typography textAlign="center">About</Typography>
-                </MenuItem>
-              
-            </Menu>
-          </Box>
+            <Link to='/message'>
 
-<Toolbaricons></Toolbaricons>
+            <ChatIcon></ChatIcon>
+
+            </Link>
+
 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{align:"right",position:"absolute",flexGrow:0,right:0}} />
 
 </Toolbar>
