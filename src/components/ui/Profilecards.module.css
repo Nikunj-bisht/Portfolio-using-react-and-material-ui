@@ -6,7 +6,6 @@ height: auto;
 flex-direction: row;
 display: flex;
 flex-wrap: wrap;
-background: rgba(255, 255, 255, 0.08);
 order: 3;
 height: fit-content;
 
