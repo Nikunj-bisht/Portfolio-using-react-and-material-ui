@@ -6,44 +6,46 @@ import Terminalui from './components/terminalcomp/Terminalui';
 import {Tabpanel} from './components/Githubprojects/Tabpanelcompo';
 import {Route, Switch} from 'react-router-dom';
 import Sendmessage from './components/sendmessagecomp/Sendmesssage';
-import { BrowserRouter as Router } from 'react-router-dom';
 import {useState} from 'react';
-import {ThemeProvider , createTheme ,  useTheme} from "@mui/material/styles";
+import { App_context } from './components/context/Appcontext';
 
 function App() {
   console.log('rendered');
-const [change , changetheme] = useState([]);
-var theme =  useTheme();
+  const c  =  {
+
+color : 'white'
+
+  };
+const [change , changetheme] = useState('white');
 const changethemefun = (isdark)=>{
 
-theme  =  () =>{
+if(isdark){
+c.color = 'black'
+console.log("Changed");
+changetheme('#212121');
 
-     createTheme({
-          palette: {
-            mode: isdark ? 'dark' : 'light',
-          },
-        })
-        
+}else{
+c.color = 'white'
+changetheme('white')
 }
-console.log('theme');
-changetheme([]);
 
 }
+
+
+
 
   return (
 
             
       <Switch>
       <Route exact path="/">
-      <ThemeProvider theme = {theme}>
-     
+        <App_context.Provider value={c}>
      <Navigation changetheme = {changethemefun}></Navigation>
 <Terminalui></Terminalui>
-<Profilecards></Profilecards>
-<Tabpanel></Tabpanel>
+<Profilecards  data = {change}></Profilecards>
+<Tabpanel  data = {change}></Tabpanel>
 <Footer></Footer>
-</ThemeProvider>
-     
+</App_context.Provider>
      </Route>
 
 <Route exact path="/message">

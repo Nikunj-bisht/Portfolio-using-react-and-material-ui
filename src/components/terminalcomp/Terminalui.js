@@ -37,7 +37,7 @@ class Terminalui extends Component {
 
   render() {
     return (
-      <div style={{margin: 'auto', marginTop: 90 }}>
+      <div style={{margin: 'auto' , height:'420px' }}>
         <div className="container">
           <Terminal name='hI , i am NIKUNJ BISHT' colorMode={ColorMode.Dark}
             lineData={this.state.terminalLineData} onInput={terminalInput => console.log(`New terminal input received:
