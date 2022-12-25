@@ -49,8 +49,9 @@ props.changetheme(event.target.checked);
 
 </IconButton>
 </Link>
-
-<Avatar alt="Remy Sharp" src={myimg} sx={{align:"right",position:"absolute",flexGrow:0,right:0,color:'white'}} />
+<Link to="/profile" style={{}}>
+<Avatar alt="Remy Sharp"  src={myimg} sx={{align:"right",position:"absolute",flexGrow:0,right:0,color:'white',bottom:8}} />
+</Link>
 <Switch onChange={switchchanged}></Switch>
 <IconButton href="https://itsmyportfoliobackend.herokuapp.com/nr.pdf">
 Resume
